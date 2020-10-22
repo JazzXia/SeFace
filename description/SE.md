@@ -32,9 +32,31 @@
 
    ![集合](./images/collection&map.jpg)
 
-5. 
+   ```
+   集合有Collection和Map
+   Collection中有List和Set,
+    其中List又分为ArrayList,LinkedList,Vector
+    其中Set中又分为HashSet,LinkedHashSet,TreeSet
+   Map又有如下的Map，HashMap,LinkedHashMap,IdentityHashMap,HashTable,WeakHashMap
+   ```
 
-6. 
+5. ArrayList和LinkedList
+
+   ```
+   ArrayList底层是数组而LinkedList底层是链表
+   
+   数组适合查询而链表适合删除修改。源码中ArrayList的初始容量为10,然后每次调用add方法size都会+1,等到当前数组的扩容的长度(也就是+1)>数据的长度elementData.length,如果是初始情况下，这个长度为10，之后调用grow方法进行扩容1.5倍并使用数组的复制。
+   链表的扩容还是比较简单的，直接加入最后一个节点。
+   ```
+
+6. volatile 关键字用来修饰变量
+
+   ```
+   1.  主要作用就是修饰的变量具有可见性，在多线程的情况下可以做到线程数据共享。【推荐一个线程来修改，其余线程来读取。这样效率比较高】
+   2.  volatile 修饰的变量不具备原子性。
+   	不能做做线程安全计数器，不能用来修饰多个线程可修改的变量
+   	为了确保共享变量能被准确和一致地更新 线程应该确保通过排他锁(synchronized)单独的获取这个变量或者通过CAS，原子操作
+   ```
 
 7. 
 
@@ -243,8 +265,6 @@
 109. 
 
 110. 
-
-111. 
 
      
 

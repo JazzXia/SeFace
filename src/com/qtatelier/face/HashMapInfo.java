@@ -3,13 +3,36 @@ package com.qtatelier.face;
 import com.qtatelier.face.hashentity.Test;
 import com.qtatelier.face.hashentity.Test1;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * 主要用于总结hashmap的所有信息
  */
 public class HashMapInfo
 {
+
+  private static final ThreadLocal<Test1> THREAD_LOCAL_NUM = new ThreadLocal<Test1>()
+  {
+    @Override
+    protected Test1 initialValue() {
+      return new Test1();
+    }
+  };
+
+  /**
+   * 线程本地存储变量加 5
+   */
+  private static void add10ByThreadLocal() {
+    for (int i = 0; i < 5; i++) {
+      Test1 test1 = THREAD_LOCAL_NUM.get();
+      test1.setCode(i + 1);
+      test1.setName("1232131");
+      THREAD_LOCAL_NUM.set(test1);
+      System.out.println(Thread.currentThread().getName() + " : ThreadLocal num=" + test1);
+    }
+  }
+
   public static void main(String[] args) {
     //1.什么情况下，需要重写hashCode和equals
     //这种情况下，我们并未对其进行重写，那么所得结果如下
@@ -52,10 +75,11 @@ public class HashMapInfo
 
     //4.
 
+    for (int i = 0; i < 3; i++) {//启动三个线程
+      Thread t = new Thread(HashMapInfo::add10ByThreadLocal);
+      t.start();
 
-
+    }
 
   }
-
-
 }
