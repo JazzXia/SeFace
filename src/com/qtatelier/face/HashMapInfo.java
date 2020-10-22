@@ -40,7 +40,14 @@ public class HashMapInfo
 
     //2.集合分为Map和Collection
     //其中Collection接口被List接口,Set接口,Queue接口继承，Map被AbstractMap实现,被SortedMap接口继承
-    //AbstractList 继承了AbstractCollection并且实现了List接口
+    //AbstractList 继承了AbstractCollection并且实现了List接口同时被Vector,ArrayList,AbstractSequentialList继承
+    //而AbstractSequentialList又被LinkedList继承
+    //所以集合有Collection和Map
+    //Collection中有List和Set,
+    // 其中List又分为ArrayList,LinkedList,Vector
+    // 其中Set中又分为HashSet,LinkedHashSet,TreeSet
+    //Map又有如下的Map，HashMap,LinkedHashMap,IdentityHashMap,HashTable,WeakHashMap
+
     //3.
 
     //4.
