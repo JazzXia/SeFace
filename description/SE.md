@@ -28,7 +28,11 @@
    如果实体类对象未重写eq和hash,那么如果作为hashmap/hashset的key就会出现一个问题，hashset/hashmap是不允许有重复的key的，这样会导致他们的key值出现相同的值，原因是每次新建一个对象，都会堆开辟一块空间，，而hashset的比较是通过equals进行比较的，equals未重写那直接比较的就是地址值，而地址对应的是不同的空间，自然必定是不相同的。
    ```
 
-4. 
+4. collection和map也就是集合的所有知识点
+
+   具体内容如下图:
+
+   [集合]: ./images/collection&map.jpg	"集合"
 
 5. 
 
@@ -241,6 +245,8 @@
 109. 
 
 110. 
+
+111. 
 
      
 
