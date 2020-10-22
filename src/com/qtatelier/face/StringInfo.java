@@ -25,7 +25,6 @@ public class StringInfo {
     //true
     System.out.println("c == d " + (c == d));
     //false
-
     //看到此处，了解了hashcode其实类似于一个坐标(可以将之总结成物理地址(并不是))每个对象的生成的hash值指向了一个物理地址,这样，如果生成的hash相同，就到对应的物理地址去比较两个值是否相等
     //如果hash不一样就在新的地方开辟一个物理地址。
     //hash值相同，用equals比较时不代表两个结果相同。hash值不同用equals比较时两个结果一定不同
